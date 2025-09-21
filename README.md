@@ -8,7 +8,7 @@ You can build it in two ways:
 
 ---
 
-## 🔧 Requirements
+## Requirements!
 - Git
 - CMake (>= 3.21 recommended)
 - A C++17 compiler
@@ -16,7 +16,7 @@ You can build it in two ways:
 
 ---
 
-## 🚀 Option 1: Use existing vcpkg (global)
+## Option 1: Use existing vcpkg (global)
 If you already have vcpkg installed on your system:
 
 ### Windows
@@ -30,3 +30,24 @@ cmake --build build --config Release
 cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake -DCMAKE_BUILD_TYPE=Release
 cmake --build build --config Release
 ```
+---
+
+## Option 2: Install local vcpkg
+if you don't have vcpkg, or just want an isolated copy for this project, you can use the provided setup scripts.
+They will:
+-Clone vcpkg inside the project.
+-Bootstrap it.
+-Configure CMake with the correct toolchain.
+-Build the project automatically.
+
+### Windows
+```powershell
+setup.bat
+```
+
+### Linux/Mac
+```bash
+chmod +x setup.sh
+./setup.sh
+```
+
