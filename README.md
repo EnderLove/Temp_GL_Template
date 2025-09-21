@@ -1,21 +1,25 @@
-# OpenGL Project Template
+# My OpenGL Project
 
-This is a cross-platform OpenGL project template using CMake and vcpkg.
+This project uses **CMake** and **vcpkg** as its package manager.
 
-## How to build
+You can build it in two ways:
+1. Use your **existing global vcpkg installation**.
+2. Use the **provided setup scripts** to install a **local vcpkg copy** inside this repo.
 
-### Linux
-```bash
-vcpkg install --triplet x64-linux
-mkdir build && cd build
-cmake .. -DCMAKE_TOOLCHAIN_FILE=~/Projects/vcpkg/scripts/buildsystems/vcpkg.cmake
-cmake --build .
-./OpenGLProject
+---
 
-### Windows 
-vcpkg install --triplet x64-windows
-mkdir build
-cd build
-cmake .. -DCMAKE_TOOLCHAIN_FILE=C:/path/to/vcpkg/scripts/buildsystems/vcpkg.cmake
-cmake --build .
-.\Debug\OpenGLProject.exe
+## 🔧 Requirements
+- Git
+- CMake (>= 3.21 recommended)
+- A C++17 compiler
+- (Optional) vcpkg, if you already have it installed globally.
+
+---
+
+## 🚀 Option 1: Use existing vcpkg (global)
+If you already have vcpkg installed on your system:
+
+### Windows
+```powershell
+cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=%VCPKG_ROOT%/scripts/buildsystems/vcpkg.cmake -DCMAKE_BUILD_TYPE=Release
+cmake --build build --config Release
