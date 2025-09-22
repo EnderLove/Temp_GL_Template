@@ -44,6 +44,12 @@ Before building the project, ensure the following:
 
 ## Building the Project
 
+REMEMBER: Since this is a template, change the project name to personalize your project
+```powershell
+cmake_minimum_required(VERSION X.XX)
+project(MyOpenGLProject) <- rename this
+```
+
 After verifying vcpkg, build the project with CMake. Replace `<path_to_vcpkg>` with the actual path where your vcpkg is located.
 
 ```powershell
