@@ -1,53 +1,44 @@
-# My OpenGL Project
+# OpenGLProject
 
-This project uses **CMake** and **vcpkg** as its package manager.
-
-You can build it in two ways:
-1. Use your **existing global vcpkg installation**.
-2. Use the **provided setup scripts** to install a **local vcpkg copy** inside this repo.
+This project is an OpenGL-based application built with **C++17**, using **GLFW**, **GLEW**, and **GLM** via [vcpkg](https://github.com/microsoft/vcpkg) as the package manager.
 
 ---
 
-## Requirements!
-- Git
-- CMake (>= 3.21 recommended)
-- A C++17 compiler
-- (Optional) vcpkg, if you already have it installed globally.
+## Prerequisites
+
+Before building the project, ensure the following:
+
+1. **C++ Compiler**:  
+   - **Preferred:** MSVC (via Visual Studio Community or Build Tools)  
+   - **Alternative:** MinGW (if MSVC is not installed)  
+
+2. **CMake** installed on your system.
+
+3. **vcpkg** downloaded and bootstrapped:  
+   - Either in the project folder (`./vcpkg`)  
+   - Or in a system path like `C:\vcpkg`
 
 ---
 
-## Option 1: Use existing vcpkg (global)
-If you already have vcpkg installed on your system:
+## Initial Setup
 
-### Windows
-```powershell
-cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=%VCPKG_ROOT%/scripts/buildsystems/vcpkg.cmake -DCMAKE_BUILD_TYPE=Release
-cmake --build build --config Release
-```
+1. **Verify vcpkg**:  
 
-### Linux
-```bash
-cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake -DCMAKE_BUILD_TYPE=Release
-cmake --build build --config Release
-```
----
+   Run the `setup.bat` file included in the project root. This batch file will:
 
-## Option 2: Install local vcpkg
-if you don't have vcpkg, or just want an isolated copy for this project, you can use the provided setup scripts.
-They will:
--Clone vcpkg inside the project.
--Bootstrap it.
--Configure CMake with the correct toolchain.
--Build the project automatically.
+   - Check if vcpkg exists in the project folder or in `C:\vcpkg`.
+   - If missing, ask if you want to clone vcpkg into `C:\vcpkg`.
+   - Bootstrap vcpkg if required.
 
-### Windows
-```powershell
-setup.bat
-```
+   **Usage:**
 
-### Linux/Mac
-```bash
-chmod +x setup.sh
-./setup.sh
-```
+   ```cmd
+   call setup.bat
 
+2. **Building the project**:
+    After verifying vcpkg, build the project with CMake. Replace <path_to_vcpkg> with the actual path where your vcpkg is located.
+    ```powershell
+    cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=<path_to_vcpkg>\scripts\buildsystems\vcpkg.cmake -DCMAKE_BUILD_TYPE=Release
+    cmake --build build --config Release
+
+    ```
