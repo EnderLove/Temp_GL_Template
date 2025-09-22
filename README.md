@@ -1,4 +1,7 @@
-# OpenGLProject
+# OpenGLProject_Template
+
+Hi everyone! I'm Ender, and this is my first OpenGL template.
+I hope this project grows over time with the feedback of those willing to try this magnificent template. :D
 
 This project is an OpenGL-based application built with **C++17**, using **GLFW**, **GLEW**, and **GLM** via [vcpkg](https://github.com/microsoft/vcpkg) as the package manager.
 
@@ -45,6 +48,11 @@ After verifying vcpkg, build the project with CMake. Replace `<path_to_vcpkg>` w
 
 ```powershell
 cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=<path_to_vcpkg>\scripts\buildsystems\vcpkg.cmake -DCMAKE_BUILD_TYPE=Release
+```
+
+Now you can build it.
+
+```powershell
 cmake --build build --config Release
 ```
 
