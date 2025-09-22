@@ -37,6 +37,7 @@ Before building the project, ensure the following:
    ```cmd
    call setup.bat
    ```
+---
 
 ## Building the Project
 
