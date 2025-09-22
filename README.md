@@ -35,7 +35,7 @@ Before building the project, ensure the following:
    ```cmd
    call setup.bat
 
-2. **Building the project**:
+## Building the project
     After verifying vcpkg, build the project with CMake. Replace <path_to_vcpkg> with the actual path where your vcpkg is located.
     ```powershell
     cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=<path_to_vcpkg>\scripts\buildsystems\vcpkg.cmake -DCMAKE_BUILD_TYPE=Release
